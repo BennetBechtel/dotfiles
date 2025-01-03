@@ -35,6 +35,7 @@ return {
 					"javascriptreact",
 					"typescript",
 					"typescriptreact",
+					"tsx",
 				},
 			}),
 			formatting.stylua,
@@ -49,7 +50,6 @@ return {
 
 		-- Setup none-ls
 		null_ls.setup({
-			-- debug = true,  -- Enable for troubleshooting
 			sources = sources,
 			on_attach = function(client, bufnr)
 				-- Enable format on save for clients that support formatting
@@ -65,15 +65,5 @@ return {
 				end
 			end,
 		})
-
-		-- Note: The following global format-on-save autocmd might be redundant
-		-- since formatting is already handled in the on_attach function above
-		-- Consider removing this if you don't need it
-		-- vim.api.nvim_create_autocmd("BufWritePre", {
-		--     pattern = "*",
-		--     callback = function()
-		--         vim.lsp.buf.format({ async = false })
-		--     end,
-		-- })
 	end,
 }
