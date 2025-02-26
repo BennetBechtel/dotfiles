@@ -42,6 +42,7 @@ return {
 					"c",
 					"java",
 					"rust",
+					"dart",
 				},
 				incremental_selection = {
 					enable = true,
