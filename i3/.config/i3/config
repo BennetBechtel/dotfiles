@@ -18,16 +18,14 @@ exec --no-startup-id autotiling
 exec --no-startup-id ~/.config/i3/auto_monitor_switch.sh
 bindsym $mod+m exec --no-startup-id ~/.config/i3/monitor_setup.sh
 
-# Power management
-exec --no-startup-id xset +dpms
-exec --no-startup-id xautolock -time 5 -locker "i3lock -c 000000 && sleep 1 && xset dpms force off"
-bindsym $mod+Shift+Escape exec "i3lock -c 000000 && sleep 1 && xset dpms force off"
+# Power management - Suspend and Lock
+bindsym $mod+Shift+Escape exec "systemctl suspend"
 
 # Cursor settings
 exec --no-startup-id xsetroot -cursor_name left_ptr
 exec --no-startup-id xrandr --dpi 96
-exec --no-startup-id gsettings set org.gnome.desktop.interface cursor-size 24
-exec --no-startup-id export XCURSOR_SIZE=24
+exec --no-startup-id gsettings set org.gnome.desktop.interface cursor-size 16
+exec --no-startup-id export XCURSOR_SIZE=16
 
 # Polybar (restart to apply changes)
 exec_always --no-startup-id bash -c "killall polybar; sleep 1; polybar"

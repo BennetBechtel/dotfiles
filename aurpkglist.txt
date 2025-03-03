@@ -1,0 +1,15 @@
+android-platform
+android-sdk
+android-sdk-build-tools
+android-sdk-cmdline-tools-latest
+android-sdk-debug
+android-sdk-platform-tools
+android-sdk-platform-tools-debug
+brave-bin
+oranchelo-icon-theme
+snapd
+superfile
+superfile-debug
+ulauncher
+yay
+yay-debug
