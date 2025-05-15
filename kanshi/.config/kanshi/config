@@ -1,0 +1,9 @@
+profile home {
+    output DP-3 enable position 0,0
+    output DP-5 enable position -1080,-435 transform 90
+    output eDP-1 disable
+}
+
+profile mobile {
+    output eDP-1 enable position 0,0 scale 1.0
+}
