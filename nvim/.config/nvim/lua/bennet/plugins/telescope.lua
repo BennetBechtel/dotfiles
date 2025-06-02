@@ -29,6 +29,9 @@ return {
 
 		telescope.setup({
 			defaults = {
+				file_ignore_patterns = {
+					"node_modules",
+				},
 				path_display = { "smart" },
 				mappings = {
 					i = {
@@ -55,6 +58,13 @@ return {
 
 		-- NOTE: set keymaps
 		vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "Fuzzy find files in cwd" })
+		-- Find also hidden files
+		vim.keymap.set(
+			"n",
+			"<leader>fF",
+			"<cmd>Telescope find_files hidden=true<CR>",
+			{ desc = "Fuzzy find files (including hidden) in cwd" }
+		)
 		vim.keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<CR>", { desc = "Fuzzy find recent files" })
 		vim.keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<CR>", { desc = "Fuzzy search string in cwd" })
 		vim.keymap.set(

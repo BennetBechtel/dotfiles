@@ -1,9 +1,32 @@
 profile home {
-    output DP-3 enable position 0,0
-    output DP-5 enable position -1080,-435 transform 90
+    output "BNQ BenQ GW2485TC ETM5N02296SL0" enable position 0,0
+    output "BNQ BenQ GW2485TC ETM5N02451SL0" enable position -1080,-435 transform 90
     output eDP-1 disable
+
+    exec ln -sf ~/.config/hypr/setups/home.conf ~/.config/hypr/setups/current-setup.conf && hyprctl reload
 }
+
 
 profile mobile {
     output eDP-1 enable position 0,0 scale 1.0
+
+    exec ln -sf ~/.config/hypr/setups/mobile.conf ~/.config/hypr/setups/current-setup.conf && hyprctl reload
+}
+
+profile iPad {
+    output eDP-1 {
+      mode 1920x1080@60.01
+      position 0,0 
+      scale 1.0
+      enable 
+    }
+
+     output "HJW HDMI TO USB 0x01348D1D" {
+        mode 1920x1080@60.00
+        position 1920,0
+        scale 1.0
+        enable
+    }
+
+    exec ln -sf ~/.config/hypr/setups/ipad.conf ~/.config/hypr/setups/current-setup.conf && hyprctl reload
 }
