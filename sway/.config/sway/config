@@ -51,14 +51,19 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-### Autostart programs
-exec swaync
+### SwayIdle
+for_window [class=".*"]   inhibit_idle fullscreen
+for_window [app_id=".*"]  inhibit_idle fullscreen
+exec sway-audio-idle-inhibit
 exec swayidle -w \
   timeout 300 'brightnessctl -s set 10' resume 'brightnessctl -r' \
   timeout 330 'swaylock -C ~/.config/swaylock/config' \
   timeout 350 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
   before-sleep 'swaylock -C ~/.config/swaylock/config' \
   timeout 1800 'systemctl suspend'
+
+### Autostart programs
+exec swaync
 exec kanshi
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
