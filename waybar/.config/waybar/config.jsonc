@@ -3,9 +3,9 @@
   "layer": "top",
   "exclusive": true,
   "gtk-layer-shell": true,
-  "modules-left": ["sway/workspaces"],
-  "modules-center": ["sway/window"],
-  "modules-right": ["network", "pulseaudio", "battery", "clock"],
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": ["custom/updates", "network", "pulseaudio", "battery", "clock"],
   "clock": {
     "format": "<span foreground='#f5c2e7'>   </span>{:%a %d %H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
@@ -42,9 +42,9 @@
   },
   "custom/updates": {
     "interval": 1800,
-    "exec": "~/.config/waybar/scripts/fedora/checkupdates.sh",
+    "exec": "~/.config/waybar/scripts/arch/checkupdates.sh",
     "tooltip": false,
     "format": {},
-    "on-click": "kitty -e ~/.config/waybar/scripts/fedora/update-system.sh"
+    "on-click": "kitty -e ~/.config/waybar/scripts/arch/update-system.sh"
   }
 }

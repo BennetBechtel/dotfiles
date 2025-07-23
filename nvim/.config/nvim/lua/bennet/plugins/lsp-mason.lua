@@ -42,6 +42,7 @@ return {
 				"prismals",
 				"pyright",
 				"eslint",
+				"clangd",
 			},
 		})
 
@@ -172,6 +173,12 @@ return {
 						},
 					},
 				},
+			},
+			clangd = {
+				-- 	cmd = { "clangd", "--clang-tidy" },
+				--	init_options = {
+				--		clangdFileStatus = true, -- Provides file status updates
+				--},
 			},
 		}
 

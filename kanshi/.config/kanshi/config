@@ -30,3 +30,17 @@ profile iPad {
 
     exec ln -sf ~/.config/hypr/setups/ipad.conf ~/.config/hypr/setups/current-setup.conf && hyprctl reload
 }
+
+profile right_monitor {
+    output "BNQ BenQ GW2485TC ETM5N02460SL0" enable position 0,-1080
+    output eDP-1 enable position 0,0 scale 1.0
+
+    exec ln -sf ~/.config/hypr/setups/right_monitor.conf ~/.config/hypr/setups/current-setup.conf && hyprctl reload
+}
+
+profile dock_only_internal {
+    output eDP-1 enable position 0,0 scale 1.0
+    output DP-2 disable
+
+    exec ln -sf ~/.config/hypr/setups/mobile.conf ~/.config/hypr/setups/current-setup.conf && hyprctl reload
+}

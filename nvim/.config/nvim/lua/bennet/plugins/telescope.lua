@@ -31,6 +31,13 @@ return {
 			defaults = {
 				file_ignore_patterns = {
 					"node_modules",
+					"%.git/",
+					"target",
+					"dist",
+					"__pycache__",
+					"%.lock",
+					"%.DS_Store",
+					"venv*",
 				},
 				path_display = { "smart" },
 				mappings = {
