@@ -44,3 +44,11 @@ profile dock_only_internal {
 
     exec ln -sf ~/.config/hypr/setups/mobile.conf ~/.config/hypr/setups/current-setup.conf && hyprctl reload
 }
+
+
+profile desktop_home {
+    output "BNQ BenQ GW2485TC ETM5N02296SL0" enable position 0,0
+    output "BNQ BenQ GW2485TC ETM5N02460SL0" enable position 1920,0
+
+    exec ln -sf ~/.config/hypr/setups/desktop_home.conf ~/.config/hypr/setups/current-setup.conf && hyprctl reload
+}
