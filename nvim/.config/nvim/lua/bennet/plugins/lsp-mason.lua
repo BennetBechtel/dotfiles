@@ -135,7 +135,6 @@ return {
 			cssls = {},
 			tailwindcss = {},
 			prismals = {},
-			pyright = {},
 			svelte = {
 				on_attach = function(client, bufnr)
 					vim.api.nvim_create_autocmd("BufWritePost", {

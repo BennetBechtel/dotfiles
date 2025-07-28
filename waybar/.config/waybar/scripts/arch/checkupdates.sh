@@ -9,7 +9,7 @@ aur_updates=$(yay -Qum 2>/dev/null | wc -l)
 total_updates=$((pacman_updates + aur_updates))
 
 if [[ "$total_updates" -eq 0 ]]; then
-    echo "<span>✅ No Updates</span>"
+    echo "<span>No Updates</span>"
 else
-    echo "<span>🔄 $total_updates Updates</span>"
+    echo "<span>$total_updates Updates</span>"
 fi
