@@ -38,6 +38,7 @@ return {
 					"%.lock",
 					"%.DS_Store",
 					"venv*",
+					".venv*",
 				},
 				path_display = { "smart" },
 				mappings = {
@@ -76,7 +77,7 @@ return {
 		vim.keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<CR>", { desc = "Fuzzy search string in cwd" })
 		vim.keymap.set(
 			"n",
-			"<leader>pc",
+			"<leader>fc",
 			"<cmd>Telescope grep_string<CR>",
 			{ desc = "Find string under cursor in cwd" }
 		)

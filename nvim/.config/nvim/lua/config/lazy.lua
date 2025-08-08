@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	{ import = "bennet.plugins" },
+	{ import = "config.plugins" },
 }, {
 	checker = {
 		enabled = true,

@@ -1,3 +1,3 @@
-require("bennet.core")
-require("bennet.lazy")
+require("config.core")
+require("config.lazy")
 require("current-theme")

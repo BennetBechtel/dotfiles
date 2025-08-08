@@ -35,11 +35,8 @@ return {
 				"html",
 				"cssls",
 				"tailwindcss",
-				"svelte",
 				"lua_ls",
-				"graphql",
 				"emmet_ls",
-				"prismals",
 				"pyright",
 				"eslint",
 				"clangd",
@@ -55,7 +52,6 @@ return {
 				"black",
 				"pylint",
 				"eslint_d",
-				"dart-debug-adapter",
 			},
 		})
 
@@ -98,10 +94,14 @@ return {
 				keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
 
 				opts.desc = "Go to previous diagnostic"
-				keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
+				keymap.set("n", "[d", function()
+					vim.diagnostic.goto_prev()
+				end, opts)
 
 				opts.desc = "Go to next diagnostic"
-				keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
+				keymap.set("n", "]d", function()
+					vim.diagnostic.goto_next()
+				end, opts)
 
 				opts.desc = "Show documentation for what is under cursor"
 				keymap.set("n", "K", vim.lsp.buf.hover, opts)
@@ -115,10 +115,10 @@ return {
 		vim.diagnostic.config({
 			signs = {
 				text = {
-					[vim.diagnostic.severity.ERROR] = " ",
-					[vim.diagnostic.severity.WARN] = " ",
+					[vim.diagnostic.severity.ERROR] = " ",
+					[vim.diagnostic.severity.WARN] = " ",
+					[vim.diagnostic.severity.INFO] = " ",
 					[vim.diagnostic.severity.HINT] = "󰠠 ",
-					[vim.diagnostic.severity.INFO] = " ",
 				},
 			},
 		})
@@ -135,19 +135,7 @@ return {
 			cssls = {},
 			tailwindcss = {},
 			prismals = {},
-			svelte = {
-				on_attach = function(client, bufnr)
-					vim.api.nvim_create_autocmd("BufWritePost", {
-						pattern = { "*.js", "*.ts" },
-						callback = function(ctx)
-							client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
-						end,
-					})
-				end,
-			},
-			graphql = {
-				filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
-			},
+			pyright = {},
 			emmet_ls = {
 				filetypes = {
 					"html",
@@ -163,7 +151,6 @@ return {
 			lua_ls = {
 				settings = {
 					Lua = {
-						-- Make the language server recognize "vim" global
 						diagnostics = {
 							globals = { "vim" },
 						},

@@ -30,11 +30,6 @@ return {
 			include = { "javascriptreact", "typescriptreact", "javascript", "typescript" },
 		})
 
-		-- Load custom Flutter snippets if needed
-		require("luasnip.loaders.from_vscode").lazy_load({
-			paths = { "~/.config/nvim/snippets/flutter" },
-		})
-
 		cmp.setup({
 			completion = {
 				completeopt = "menu,menuone,preview,noselect",
