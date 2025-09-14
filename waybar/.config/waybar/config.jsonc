@@ -41,10 +41,8 @@
       "on-click": "pavucontrol"
   },
   "custom/updates": {
-    "interval": 1800,
-    "exec": "~/.config/waybar/scripts/arch/checkupdates.sh",
     "tooltip": false,
-    "format": {},
+    "format": "<span>Update System</span>",
     "on-click": "kitty -e ~/.config/waybar/scripts/arch/update-system.sh"
   }
 }
