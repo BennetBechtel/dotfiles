@@ -1,0 +1,6 @@
+profile desktop_home {
+    output "BNQ BenQ GW2485TC ETM5N02296SL0" enable position 0,0
+    output "BNQ BenQ GW2485TC ETM5N02451SL0" enable position -1080,-435 transform 90
+
+    exec ln -sf ~/.config/sway/setups/desktop_home ~/.config/sway/current_setup && swaymsg reload
+}
