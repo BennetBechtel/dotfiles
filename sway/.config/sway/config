@@ -67,16 +67,20 @@ exec_always swaybg -m fill -i ~/.config/backgrounds/horizon-2.jpg
 ##############################################
 #  6. Idle & Power Management
 ##############################################
-for_window [class=".*"]   inhibit_idle fullscreen
-for_window [app_id=".*"]  inhibit_idle fullscreen
+# Optional: Fullscreen Apps inhibit idle
+#for_window [class=".*"]   inhibit_idle fullscreen
+#for_window [app_id=".*"]  inhibit_idle fullscreen
 
+# Audio inhibits idle (Spotify, YouTube, mpv, etc.)
 exec sway-audio-idle-inhibit
-exec swayidle -w \
-  timeout 300  'brightnessctl -s set 10%' resume 'brightnessctl -r' \
-  timeout 330  'swaylock -C ~/.config/swaylock/config' \
-  timeout 350  'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-  before-sleep 'swaylock -C ~/.config/swaylock/config' \
-  timeout 1800 'systemctl suspend'
+
+exec_always pkill -x swayidle; swayidle -w \
+timeout 300 'brightnessctl -s set 10% || true' \
+       resume 'brightnessctl -r || true' \
+timeout 330 'playerctl pause; swaylock -f -C ~/.config/swaylock/config' \
+before-sleep 'playerctl pause; pactl set-sink-mute @DEFAULT_SINK@ true; swaylock -f -C ~/.config/swaylock/config' \
+after-resume 'pactl set-sink-mute @DEFAULT_SINK@ false' \
+timeout 600 'systemctl suspend'
 
 
 ##############################################
