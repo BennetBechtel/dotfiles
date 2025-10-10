@@ -12,6 +12,7 @@
 # -----------------------------
 alias cls="reset"
 alias vi="nvim"
+alias yz="yazi"
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
@@ -43,6 +44,21 @@ if command -v pyenv >/dev/null 2>&1; then
         command pyenv "$@"
     }
 fi
+
+# -----------------------------
+# History configuration
+# -----------------------------
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+
+setopt HIST_IGNORE_DUPS       # don’t record duplicate commands
+setopt HIST_IGNORE_ALL_DUPS   # delete old entries when a duplicate is added
+setopt HIST_IGNORE_SPACE      # don’t record commands starting with a space
+setopt HIST_SAVE_NO_DUPS      # don’t write duplicate commands to the history file
+setopt HIST_VERIFY            # don’t auto-execute recalled command until Enter
+setopt APPEND_HISTORY         # append history instead of overwriting
+setopt SHARE_HISTORY          # share history across all zsh sessions
 
 # -----------------------------
 # Zsh plugins (Fish-like behavior)

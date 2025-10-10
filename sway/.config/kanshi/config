@@ -4,3 +4,9 @@ profile desktop_home {
 
     exec ln -sf ~/.config/sway/setups/desktop_home ~/.config/sway/current_setup && swaymsg reload
 }
+
+profile laptop_mobile {
+    output eDP-1 enable position 0,0
+
+    exec ln -sf ~/.config/sway/setups/laptop_mobile ~/.config/sway/current_setup && swaymsg reload
+}
