@@ -38,10 +38,8 @@ client.urgent            $peach    $base $peach $overlay0 $peach
 client.placeholder       $overlay0 $base $text $overlay0 $overlay0
 client.background        $base
 
-bar {
-  id sway
-  swaybar_command waybar
-}
+# Launch Waybar once at startup
+exec setsid waybar & disown
 
 
 ##############################################
@@ -59,7 +57,7 @@ input type:touchpad {
 #  5. Autostart
 ##############################################
 exec_always swaync
-exec_always kanshi -m
+exec kanshi -m
 exec_always autotiling -l 2
 exec_always swaybg -m fill -i ~/.config/backgrounds/horizon-2.jpg
 
@@ -79,7 +77,7 @@ exec_always sh -c 'pkill -x swayidle; swayidle -w \
     resume "brightnessctl -r || true" \
   timeout 330 "playerctl pause; swaylock -f -C ~/.config/swaylock/config" \
     before-sleep "playerctl pause; pactl set-sink-mute @DEFAULT_SINK@ true; swaylock -f -C ~/.config/swaylock/config" \
-    after-resume "pactl set-sink-mute @DEFAULT_SINK@ false" \
+    after-resume "pactl set-sink-mute @DEFAULT_SINK@ false; pkill -x waybar; sleep 1; setsid waybar & disown" \
   timeout 600 "systemctl suspend"'
 
 
