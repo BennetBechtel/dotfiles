@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = ","
+--vim.g.maplocalleader = " "
 
 local opts = { noremap = true, silent = true }
 
@@ -98,7 +99,7 @@ end, { desc = "Copy file path to clipboard" })
 
 -- Toggle LSP diagnostics visibility
 local isLspDiagnosticsVisible = true
-vim.keymap.set("n", "<leader>lx", function()
+vim.keymap.set("n", "<leader>rx", function()
 	isLspDiagnosticsVisible = not isLspDiagnosticsVisible
 	vim.diagnostic.config({
 		virtual_text = isLspDiagnosticsVisible,

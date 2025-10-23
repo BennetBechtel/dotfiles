@@ -109,6 +109,9 @@ return {
 				opts.desc = "Restart LSP"
 				keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts)
 			end,
+
+			-- Toggle LSP diagnostics
+			-- <leader>rx (in keymaps.lua)
 		})
 
 		-- Modern way to setup diagnostic signs (fixes deprecation warning)

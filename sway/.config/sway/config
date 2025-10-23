@@ -13,6 +13,7 @@ set $term kitty
 set $menu wofi --show drun
 set $fileManager thunar
 set $browser zen-browser
+set $emailClient thunderbird
 
 # Home row direction keys
 set $left h
@@ -51,6 +52,12 @@ input type:touchpad {
     natural_scroll enabled
     middle_emulation enabled
 }
+
+input type:keyboard {
+    xkb_layout us,de
+    xkb_variant ,nodeadkeys
+}
+bindsym $mod+Ctrl+t input * xkb_switch_layout next
 
 
 ##############################################
@@ -120,11 +127,11 @@ bindsym $mod+Return exec $term
 bindsym $mod+space  exec $menu
 bindsym $mod+e      exec $fileManager
 bindsym $mod+b      exec $browser
+bindsym $mod+m      exec $emailClient
 
 # Close / exit / lock
 bindsym $mod+q        kill
 bindsym $mod+Ctrl+m   exit
-bindsym $mod+Ctrl+e   exec swaynag -t warning -m 'Exit sway?' -B 'Yes' 'swaymsg exit'
 bindsym $mod+Ctrl+l   exec swaylock
 
 # Layout: split / float / fullscreen
@@ -173,4 +180,4 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl -q set 10%-
 bindsym --locked XF86MonBrightnessUp   exec brightnessctl -q set 10%+
 
 # Screenshot
-bindsym $mod+Delete exec grim ~/Pictures/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png && notify-send "Screenshot saved"
+bindsym $mod+Delete exec grim ~/.Screenshots/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png && notify-send "Screenshot saved"

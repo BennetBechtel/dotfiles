@@ -2,6 +2,26 @@
 # ~/.zshrc – based on your bashrc
 #
 
+
+# -----------------------------
+# Keybinds
+# -----------------------------
+# Use emacs-style keybindings
+bindkey -e
+
+# Ctrl + Left/Right = move by word
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;5C' forward-word
+
+# Page Up/Down = search through history
+#bindkey '^[[5~' history-beginning-search-backward
+#bindkey '^[[6~' history-beginning-search-forward
+
+
+# --- Unbind PageUp / PageDown ---
+bindkey -r '^[[5~'   # PageUp
+bindkey -r '^[[6~'   # PageDown
+
 # -----------------------------
 # PATH
 # -----------------------------
