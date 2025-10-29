@@ -68,6 +68,9 @@ exec kanshi -m
 exec_always autotiling -l 2
 exec_always swaybg -m fill -i ~/.config/backgrounds/horizon-2.jpg
 
+exec_always --no-startup-id nm-applet --indicator >/dev/null 2>&1
+exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
 
 ##############################################
 #  6. Idle & Power Management
