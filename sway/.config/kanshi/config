@@ -10,3 +10,16 @@ profile laptop_mobile {
 
     exec ln -sf ~/.config/sway/setups/laptop_mobile ~/.config/sway/current_setup && swaymsg reload
 }
+
+profile single_monitor {
+    output "BNQ BenQ GW2485TC ETM5N02296SL0" enable position 0,0
+    exec ln -sf ~/.config/sway/setups/single_monitor ~/.config/sway/current_setup && swaymsg reload
+}
+
+profile 27_24 {
+    output "LG Electronics LG ULTRAFINE 504NTDVE7882" enable
+    output "BNQ BenQ GW2485TC ETM5N02460SL0" enable
+
+    exec ln -sf ~/.config/sway/setups/27_24 ~/.config/sway/current_setup && swaymsg reload
+}
+
