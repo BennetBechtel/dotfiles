@@ -42,6 +42,12 @@ client.background        $base
 # Launch Waybar once at startup
 exec setsid waybar & disown
 
+# Hide and Move Cursor
+seat * hide_cursor when-typing enable
+seat * hide_cursor 10000
+mouse_warping container
+focus_follows_mouse yes
+
 
 ##############################################
 #  4. Input
