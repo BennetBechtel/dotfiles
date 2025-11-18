@@ -10,7 +10,7 @@ include current_setup
 ##############################################
 set $mod Mod4
 set $term kitty
-set $menu wofi --show drun
+set $menu rofi -show drun
 set $fileManager thunar
 set $browser zen-browser
 set $emailClient thunderbird
@@ -72,7 +72,7 @@ bindsym $mod+Ctrl+t input * xkb_switch_layout next
 exec_always swaync
 exec kanshi -m
 exec_always autotiling -l 2
-exec_always swaybg -m fill -i ~/.config/backgrounds/horizon-2.jpg
+exec_always swaybg -m fill -i "$(cat ~/.config/current_wallpaper 2>/dev/null)"
 
 # Autoconnect Wifi
 exec /usr/bin/gnome-keyring-daemon --start --components=secrets
@@ -88,7 +88,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #for_window [app_id=".*"]  inhibit_idle fullscreen
 
 # Audio inhibits idle (Spotify, YouTube, mpv, etc.)
-exec sway-audio-idle-inhibit
+exec wayland-pipewire-idle-inhibit
 
 exec_always sh -c 'pkill -x swayidle; swayidle -w \
   timeout 300 "brightnessctl -s set 10% || true" \
@@ -134,16 +134,19 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Shift+c reload
 
 # Apps
-bindsym $mod+Return exec $term
-bindsym $mod+space  exec $menu
-bindsym $mod+e      exec $fileManager
-bindsym $mod+b      exec $browser
-bindsym $mod+m      exec $emailClient
+bindsym $mod+Return   exec $term
+bindsym $mod+space    exec $menu
+bindsym $mod+e        exec $fileManager
+bindsym $mod+b        exec $browser
+bindsym $mod+m        exec $emailClient
+bindsym $mod+y        exec kitty yazi
+bindsym $mod+Shift+w  exec ~/.config/rofi/scripts/wallpaper.sh
 
 # Close / exit / lock
 bindsym $mod+q        kill
 bindsym $mod+Ctrl+m   exit
 bindsym $mod+Ctrl+l   exec swaylock
+bindsym $mod+Ctrl+p exec systemctl suspend
 
 # Layout: split / float / fullscreen
 bindsym $mod+n splith
