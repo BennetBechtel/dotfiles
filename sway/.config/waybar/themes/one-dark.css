@@ -1,0 +1,21 @@
+/* One Dark Color Palette */
+@define-color background #282c34;
+@define-color background-alt #2c313c;
+@define-color foreground #abb2bf;
+@define-color foreground-alt #828997;
+@define-color border #4b5263;
+
+@define-color accent-primary #61afef;
+@define-color accent-secondary #c678dd;
+@define-color accent-tertiary #56b6c2;
+
+@define-color color-red #e06c75;
+@define-color color-orange #d19a66;
+@define-color color-yellow #e5c07b;
+@define-color color-green #98c379;
+@define-color color-cyan #56b6c2;
+@define-color color-blue #61afef;
+@define-color color-purple #c678dd;
+@define-color color-pink #c678dd;
+
+@define-color urgent #e06c75;

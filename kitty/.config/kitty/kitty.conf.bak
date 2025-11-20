@@ -31,6 +31,6 @@ map ctrl+shift+k set_background_opacity -0.1
 
 
 # BEGIN_KITTY_THEME
-# gruvbox
+# catppuccin-mocha
 include current-theme.conf
 # END_KITTY_THEME

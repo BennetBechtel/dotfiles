@@ -3,14 +3,14 @@ return {
 	{
 		"catppuccin/nvim",
 		lazy = false,
-		name = "catppuccin",
+		name = "catppuccin-mocha",
 		priority = 1000,
 		config = function()
 			require("catppuccin").setup({
 				flavour = "auto", -- latte, frappe, macchiato, mocha
 				transparent_background = false, -- disables setting the background color.
 				show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
-				term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
+				term_colors = true, -- sets terminal colors (e.g. `g:terminal_color_0`)
 				dim_inactive = {
 					enabled = false, -- dims the background color of inactive window
 					shade = "dark",
@@ -52,27 +52,35 @@ return {
 			})
 		end,
 	},
-	-- NOTE : tokyonight
+	-- NOTE gruvbox
 	{
-		"folke/tokyonight.nvim",
+		"ellisonleao/gruvbox.nvim",
 		lazy = false,
-		name = "tokyonight", -- Added name field for reference
+		name = "gruvbox",
 		priority = 1000,
 		config = function()
-			require("tokyonight").setup({
-				style = "moon",
-				transparent = false,
-				terminal_colors = true,
-				styles = {
-					comments = { italic = true },
-					keywords = { italic = true },
-					functions = {},
-					variables = {},
-					sidebars = "dark",
-					floats = "dark",
+			require("gruvbox").setup({
+				terminal_colors = true, -- add neovim terminal colors
+				undercurl = true,
+				underline = true,
+				bold = true,
+				italic = {
+					strings = true,
+					emphasis = true,
+					comments = true,
+					operators = false,
+					folds = true,
 				},
-				sidebars = { "qf", "help" },
+				strikethrough = true,
+				invert_selection = false,
+				invert_signs = false,
+				invert_tabline = false,
+				inverse = true, -- invert background for search, diffs, statuslines and errors
+				contrast = "", -- can be "hard", "soft" or empty string
+				palette_overrides = {},
+				overrides = {},
 				dim_inactive = false,
+				transparent_mode = false,
 			})
 		end,
 	},

@@ -1,0 +1,16 @@
+# Gruvbox color scheme for i3wm
+# Using colors from the YAML palette
+
+set $bg             #719586
+set $bg-inactive    #2e2a29
+set $bg-urgent      #890009
+set $text           #cbb890
+set $text-inactive  #7f7061
+set $bar            #1e1e1e
+set $statusline     #efdfae
+
+# class                 border        background    text           indicator child_border
+client.focused          $bg           $bg           $text          $bg       $bg
+client.unfocused        $bg-inactive  $bg-inactive  $text-inactive $bar      $bar
+client.focused_inactive $bg-inactive  $bg-inactive  $text-inactive $bar      $bar
+client.urgent           $bg-urgent    $bg-urgent    $text          $bar      $bar

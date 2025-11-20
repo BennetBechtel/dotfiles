@@ -1,7 +1,7 @@
 ##############################################
 #  1. Includes & Theme
 ##############################################
-include catppuccin-mocha
+include current_theme
 include current_setup
 
 
@@ -31,13 +31,7 @@ gaps outer 6
 default_border pixel 2
 default_floating_border pixel 2
 
-# Client colors (Catppuccin Mocha)
-client.focused           $mauve    $base $text $mauve    $mauve
-client.focused_inactive  $overlay0 $base $text $overlay0 $overlay0
-client.unfocused         $overlay0 $base $text $overlay0 $overlay0
-client.urgent            $peach    $base $peach $overlay0 $peach
-client.placeholder       $overlay0 $base $text $overlay0 $overlay0
-client.background        $base
+# Colors set in current_theme file
 
 # Launch Waybar once at startup
 exec setsid waybar & disown
@@ -70,9 +64,9 @@ bindsym $mod+Ctrl+t input * xkb_switch_layout next
 #  5. Autostart
 ##############################################
 exec_always swaync
-exec kanshi -m
+exec kanshi
 exec_always autotiling -l 2
-exec_always swaybg -m fill -i "$(cat ~/.config/current_wallpaper 2>/dev/null)"
+exec_always swaybg -m fill -i "$(cat ~/.config/current_wallpaper)"
 
 # Autoconnect Wifi
 exec /usr/bin/gnome-keyring-daemon --start --components=secrets
@@ -88,7 +82,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #for_window [app_id=".*"]  inhibit_idle fullscreen
 
 # Audio inhibits idle (Spotify, YouTube, mpv, etc.)
-exec wayland-pipewire-idle-inhibit
+exec_always wayland-pipewire-idle-inhibit
 
 exec_always sh -c 'pkill -x swayidle; swayidle -w \
   timeout 300 "brightnessctl -s set 10% || true" \
@@ -141,12 +135,14 @@ bindsym $mod+b        exec $browser
 bindsym $mod+m        exec $emailClient
 bindsym $mod+y        exec kitty yazi
 bindsym $mod+Shift+w  exec ~/.config/rofi/scripts/wallpaper.sh
+bindsym $mod+Shift+t  exec ~/.config/rofi/scripts/theme.sh
 
 # Close / exit / lock
 bindsym $mod+q        kill
 bindsym $mod+Ctrl+m   exit
 bindsym $mod+Ctrl+l   exec swaylock
 bindsym $mod+Ctrl+p exec systemctl suspend
+bindsym $mod+Ctrl+u exec shutdown now
 
 # Layout: split / float / fullscreen
 bindsym $mod+n splith

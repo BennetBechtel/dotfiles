@@ -1,0 +1,200 @@
+# Catppuccin Mocha Color Palette
+# Terminal color scheme with background shades, foreground variants, and accent colors
+
+background_shades:
+  crust:
+    index: 233
+    hex: "#11111b"
+    rgb: "11/11/1b"
+    description: "darkest background"
+  
+  mantle:
+    index: 234
+    hex: "#181825"
+    rgb: "18/18/25"
+    description: "very dark background"
+  
+  base:
+    index: 235
+    hex: "#1e1e2e"
+    rgb: "1e/1e/2e"
+    description: "base background"
+  
+  surface0:
+    index: 236
+    hex: "#313244"
+    rgb: "31/32/44"
+    description: "elevated surface"
+  
+  surface1:
+    index: 237
+    hex: "#45475a"
+    rgb: "45/47/5a"
+    description: "line numbers, subtle bg"
+  
+  surface2:
+    index: 238
+    hex: "#585b70"
+    rgb: "58/5b/70"
+    description: "cursor line bg, borders"
+
+faded_foreground:
+  overlay0:
+    index: 240
+    hex: "#6c7086"
+    rgb: "6c/70/86"
+    description: "comments, disabled"
+  
+  overlay1:
+    index: 242
+    hex: "#7f849c"
+    rgb: "7f/84/9c"
+    description: "faded comments"
+  
+  overlay2:
+    index: 243
+    hex: "#9399b2"
+    rgb: "93/99/b2"
+    description: "docstrings, hints"
+
+main_foreground:
+  subtext0:
+    index: 245
+    hex: "#a6adc8"
+    rgb: "a6/ad/c8"
+    description: "dimmed text"
+  
+  subtext1:
+    index: 247
+    hex: "#bac2de"
+    rgb: "ba/c2/de"
+    description: "slightly faded text"
+  
+  text:
+    index: 252
+    hex: "#cdd6f4"
+    rgb: "cd/d6/f4"
+    description: "default foreground text"
+
+light_highlights:
+  lavender:
+    index: 189
+    hex: "#b4befe"
+    rgb: "b4/be/fe"
+    description: "selection bg, special"
+  
+  rosewater:
+    index: 224
+    hex: "#f5e0dc"
+    rgb: "f5/e0/dc"
+    description: "search highlight bg"
+  
+  flamingo:
+    index: 217
+    hex: "#f2cdcd"
+    rgb: "f2/cd/cd"
+    description: "alternative highlight"
+
+accent_colors:
+  red:
+    index: 210
+    hex: "#f38ba8"
+    rgb: "f3/8b/a8"
+    description: "errors, removals"
+  
+  maroon:
+    index: 217
+    hex: "#eba0ac"
+    rgb: "eb/a0/ac"
+    description: "error variants"
+  
+  peach:
+    index: 216
+    hex: "#fab387"
+    rgb: "fa/b3/87"
+    description: "warnings, numbers"
+  
+  yellow:
+    index: 223
+    hex: "#f9e2af"
+    rgb: "f9/e2/af"
+    description: "warnings, caution"
+  
+  green:
+    index: 151
+    hex: "#a6e3a1"
+    rgb: "a6/e3/a1"
+    description: "additions, success"
+  
+  teal:
+    index: 116
+    hex: "#94e2d5"
+    rgb: "94/e2/d5"
+    description: "operators, special"
+  
+  sky:
+    index: 117
+    hex: "#89dceb"
+    rgb: "89/dc/eb"
+    description: "functions, methods"
+  
+  sapphire:
+    index: 117
+    hex: "#74c7ec"
+    rgb: "74/c7/ec"
+    description: "constructors, types"
+  
+  blue:
+    index: 117
+    hex: "#89b4fa"
+    rgb: "89/b4/fa"
+    description: "keywords, info"
+  
+  mauve:
+    index: 141
+    hex: "#cba6f7"
+    rgb: "cb/a6/f7"
+    description: "statements, control flow"
+  
+  pink:
+    index: 218
+    hex: "#f5c2e7"
+    rgb: "f5/c2/e7"
+    description: "constants, properties"
+
+dark_accent_variants:
+  red_dark:
+    index: 52
+    hex: "#442c30"
+    rgb: "44/2c/30"
+    description: "error background"
+  
+  green_dark:
+    index: 58
+    hex: "#31362f"
+    rgb: "31/36/2f"
+    description: "diff add bg"
+  
+  yellow_dark:
+    index: 94
+    hex: "#3f372e"
+    rgb: "3f/37/2e"
+    description: "warning bg"
+  
+  blue_dark:
+    index: 17
+    hex: "#2b3046"
+    rgb: "2b/30/46"
+    description: "info bg, links"
+  
+  mauve_dark:
+    index: 54
+    hex: "#3b2f42"
+    rgb: "3b/2f/42"
+    description: "hint bg, markdown"
+  
+  peach_dark:
+    index: 94
+    hex: "#3e3230"
+    rgb: "3e/32/30"
+    description: "symbol/markup bg"

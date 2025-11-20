@@ -1,3 +1,6 @@
+# Main Starship Configuration
+palette = 'gruvbox'
+
 format = """
 $directory\
 $git_branch\
@@ -19,7 +22,10 @@ $line_break\
 $character"""
 
 add_newline = true
-palette = 'catppuccin_mocha'
+
+# ============================================================================
+# MODULE CONFIGURATIONS (Theme-independent)
+# ============================================================================
 
 [directory]
 style = 'bold fg:blue'
@@ -30,13 +36,13 @@ truncate_to_repo = false
 
 [directory.substitutions]
 'Documents' = '󰈙'
-'Downloads' = ' '
-'Music' = ' '
-'Pictures' = ' '
+'Downloads' = ' '
+'Music' = ' '
+'Pictures' = ' '
 
 [git_branch]
 style = 'fg:green'
-symbol = ' '
+symbol = ' '
 format = '[on](white) [$symbol$branch ]($style)'
 
 [git_status]
@@ -48,52 +54,52 @@ symbol = ' '
 
 [python]
 style = 'teal'
-symbol = ' '
+symbol = ' '
 format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 pyenv_version_name = true
 pyenv_prefix = ''
 
 [lua]
 style = 'teal'
-symbol = ' '
+symbol = ' '
 
 [nodejs]
 style = 'green'
-symbol = ' '
+symbol = ' '
 
 [golang]
 style = 'blue'
-symbol = ' '
+symbol = ' '
 
 [haskell]
 style = 'blue'
-symbol = ' '
+symbol = ' '
 
 [rust]
 style = 'orange'
-symbol = ' '
+symbol = ' '
 
 [ruby]
 style = 'blue'
-symbol = ' '
+symbol = ' '
 
 [package]
 symbol = '󰏗 '
 
 [aws]
-symbol = ' '
+symbol = ' '
 style = 'yellow'
 format = '[$symbol($profile )(\[$duration\] )]($style)'
 
 [docker_context]
-symbol = ' '
+symbol = ' '
 style = 'fg:#06969A'
 format = '[$symbol]($style) $path'
 detect_files = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
 detect_extensions = ['Dockerfile']
 
 [jobs]
-symbol = ' '
+symbol = ' '
 style = 'red'
 number_threshold = 1
 format = '[$symbol]($style)'
@@ -103,7 +109,11 @@ min_time = 500
 style = 'fg:gray'
 format = '[$duration]($style)'
 
-[palettes.catppuccin_mocha]
+# ============================================================================
+# THEME PALETTES
+# ============================================================================
+
+[palettes.catppuccin-mocha]
 rosewater = "#f5e0dc"
 flamingo = "#f2cdcd"
 pink = "#f5c2e7"
@@ -130,3 +140,39 @@ surface0 = "#313244"
 base = "#1e1e2e"
 mantle = "#181825"
 crust = "#11111b"
+
+[palettes.gruvbox]
+# Background shades
+bg0_h = "#101213"
+bg0 = "#1e1e1e"
+bg1 = "#262417"
+bg2 = "#2e2a29"
+bg3 = "#3f3935"
+bg4 = "#534a42"
+bg5 = "#685c51"
+# Foreground
+gray = "#7f7061"
+fg = "#cbb890"
+fg1 = "#af9f81"
+fg2 = "#978771"
+# Light highlights
+yellow_light = "#efdfae"
+yellow_lighter = "#faeebb"
+lightest = "#f8f4cd"
+alt_highlight = "#e6d4a3"
+# Accent colors
+red = "#f73028"
+green = "#aab01e"
+yellow = "#f7b125"
+purple = "#c77089"
+aqua = "#7db669"
+blue = "#719586" #teal
+orange = "#fb6a16"
+# Dark variants
+red_dark = "#890009"
+green_dark = "#66620d"
+yellow_dark = "#a56311"
+orange_dark = "#9d2807"
+blue_dark = "#0e5365"
+purple_dark = "#7b2b5e"
+green_deep = "#356a46"

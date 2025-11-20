@@ -1,0 +1,2 @@
+catppuccin-mocha:Catppuccin Mocha
+gruvbox:Gruvbox Dark

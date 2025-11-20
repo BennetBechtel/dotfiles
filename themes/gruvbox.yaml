@@ -1,0 +1,188 @@
+# Gruvbox Color Palette
+# Terminal color scheme with background shades, foreground variants, and accent colors
+
+background_shades:
+  bg0_h:
+    index: 234
+    hex: "#101213"
+    rgb: "16/18/19"
+    description: "very dark background"
+  
+  bg0:
+    index: 235
+    hex: "#1e1e1e"
+    rgb: "1e/1e/1e"
+    description: "base background"
+  
+  bg1:
+    index: 236
+    hex: "#262417"
+    rgb: "26/24/23"
+    description: "slightly lighter bg"
+  
+  bg2:
+    index: 237
+    hex: "#2e2a29"
+    rgb: "2e/2a/29"
+    description: "line numbers, subtle bg"
+  
+  bg3:
+    index: 239
+    hex: "#3f3935"
+    rgb: "3f/39/35"
+    description: "border lines, splitbars"
+  
+  bg4:
+    index: 241
+    hex: "#534a42"
+    rgb: "53/4a/42"
+    description: "cursor line bg, subtle contrast"
+  
+  bg5:
+    index: 243
+    hex: "#685c51"
+    rgb: "68/5c/51"
+    description: "low contrast UI elements"
+
+faded_foreground:
+  gray1:
+    index: 244
+    hex: "#7f7061"
+    rgb: "7f/70/61"
+    description: "comments"
+  
+  gray2:
+    index: 245
+    hex: "#7f7061"
+    rgb: "7f/70/61"
+    description: "docstrings, hints"
+
+main_foreground:
+  fg:
+    index: 250
+    hex: "#cbb890"
+    rgb: "cb/b8/90"
+    description: "default foreground text"
+  
+  fg1:
+    index: 248
+    hex: "#af9f81"
+    rgb: "af/9f/81"
+    description: "slightly faded text"
+  
+  fg2:
+    index: 246
+    hex: "#978771"
+    rgb: "97/87/71"
+    description: "further dimmed"
+
+light_highlights:
+  yellow1:
+    index: 228
+    hex: "#efdfae"
+    rgb: "ef/df/ae"
+    description: "selection bg"
+  
+  yellow2:
+    index: 229
+    hex: "#faeebb"
+    rgb: "fa/ee/bb"
+    description: "search highlight bg"
+  
+  lightest:
+    index: 230
+    hex: "#f8f4cd"
+    rgb: "f8/f4/cd"
+    description: "special highlights"
+  
+  alt_highlight:
+    index: 223
+    hex: "#e6d4a3"
+    rgb: "e6/d4/a3"
+    description: "alternative highlight bg"
+
+accent_colors:
+  red:
+    index: 167
+    hex: "#f73028"
+    rgb: "f7/30/28"
+    description: "errors, removals"
+  
+  green:
+    index: 142
+    hex: "#aab01e"
+    rgb: "aa/b0/1e"
+    description: "additions, success"
+  
+  yellow:
+    index: 214
+    hex: "#f7b125"
+    rgb: "f7/b1/25"
+    description: "warnings"
+  
+  purple:
+    index: 175
+    hex: "#c77089"
+    rgb: "c7/70/89"
+    description: "function names, git renamed"
+  
+  aqua:
+    index: 108
+    hex: "#7db669"
+    rgb: "7d/b6/69"
+    description: "type hints, diffs"
+  
+  teal:
+    index: 109
+    hex: "#719586"
+    rgb: "71/95/86"
+    description: "status bars, cursor"
+  
+  orange:
+    index: 208
+    hex: "#fb6a16"
+    rgb: "fb/6a/16"
+    description: "search match, bright UI"
+
+dark_accent_variants:
+  red_dark:
+    index: 88
+    hex: "#890009"
+    rgb: "89/00/09"
+    description: "error background"
+  
+  green_dark:
+    index: 100
+    hex: "#66620d"
+    rgb: "66/62/0d"
+    description: "diff bg"
+  
+  yellow_dark:
+    index: 136
+    hex: "#a56311"
+    rgb: "a5/63/11"
+    description: "change marker"
+  
+  orange_dark:
+    index: 130
+    hex: "#9d2807"
+    rgb: "9d/28/07"
+    description: "symbol/markup"
+  
+  blue_dark:
+    index: 24
+    hex: "#0e5365"
+    rgb: "0e/53/65"
+    description: "info, links"
+  
+  purple_dark:
+    index: 96
+    hex: "#7b2b5e"
+    rgb: "7b/2b/5e"
+    description: "markdown, hint bg"
+  
+  green_deep:
+    index: 66
+    hex: "#356a46"
+    rgb: "35/6a/46"
+    description: "background diff"

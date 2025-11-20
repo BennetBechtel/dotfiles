@@ -1,0 +1,21 @@
+/* Dracula Color Palette */
+@define-color background #282a36;
+@define-color background-alt #44475a;
+@define-color foreground #f8f8f2;
+@define-color foreground-alt #e6e6e6;
+@define-color border #6272a4;
+
+@define-color accent-primary #bd93f9;
+@define-color accent-secondary #8be9fd;
+@define-color accent-tertiary #ff79c6;
+
+@define-color color-red #ff5555;
+@define-color color-orange #ffb86c;
+@define-color color-yellow #f1fa8c;
+@define-color color-green #50fa7b;
+@define-color color-cyan #8be9fd;
+@define-color color-blue #6272a4;
+@define-color color-purple #bd93f9;
+@define-color color-pink #ff79c6;
+
+@define-color urgent #ff5555;

@@ -5,9 +5,9 @@ return {
 	init = function()
 		-- Enable syntax highlighting and filetype plugins
 		vim.cmd([[
-      filetype plugin indent on
-      syntax enable
-    ]])
+       filetype plugin indent on
+       syntax enable
+     ]])
 
 		-- Set local leader key (set in global config)
 		-- vim.g.maplocalleader = ","

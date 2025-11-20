@@ -28,14 +28,14 @@ alias grep='grep --color=auto'
 alias nmtui-dark='(
   export TERM=xterm-256color
   export NCURSES_NO_UTF8_ACS=1
-  # Temporarily remap color4 (blue) to dark background
-  printf "\e]4;4;#1e1e2e\a"
-  # Bright blue remains bright for selections
-  printf "\e]4;12;#89b4fa\a"
+  
+  # Use a generic dark color that works with any theme
+  printf "\e]4;4;#1a1a1a\a"
+  
   nmtui
-  # Reset color4 back to normal after exit
-  printf "\e]4;4;#89b4fa\a"
-  printf "\e]4;12;#89b4fa\a"
+  
+  # Reset by reloading kitty config (restores theme colors)
+  kill -SIGUSR1 $(pgrep kitty) 2>/dev/null || true
 )'
 
 # -----------------------------

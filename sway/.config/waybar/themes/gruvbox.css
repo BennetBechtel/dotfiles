@@ -1,0 +1,21 @@
+/* Gruvbox Dark Color Palette */
+@define-color background #1e1e1e;
+@define-color background-alt #3c3836;
+@define-color foreground #ebdbb2;
+@define-color foreground-alt #928374;
+@define-color border #928374;
+
+@define-color accent-primary #719586;
+@define-color accent-secondary #aab01e;
+@define-color accent-tertiary #f7b125;
+
+@define-color color-red #f73028;
+@define-color color-orange #fb6a16;
+@define-color color-yellow #f7b125;
+@define-color color-green #aab01e;
+@define-color color-cyan #7db669;
+@define-color color-blue #719586;
+@define-color color-purple #7b2b5e;
+@define-color color-pink #c77089;
+
+@define-color urgent #f73028;

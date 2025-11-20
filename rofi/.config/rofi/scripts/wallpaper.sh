@@ -42,8 +42,7 @@ chosen=$(echo -en "$entries" | rofi -dmenu -i -p "Select Wallpaper" \
 
 # If user selected something, set it as wallpaper
 if [ -n "$chosen" ]; then
-    swaymsg output "*" bg "$WALLPAPER_DIR/$chosen" fill
-    
     # Save the current wallpaper for next startup
     echo "$WALLPAPER_DIR/$chosen" > "$HOME/.config/current_wallpaper"
+    swaymsg reload
 fi
