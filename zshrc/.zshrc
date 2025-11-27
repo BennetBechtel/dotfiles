@@ -94,3 +94,5 @@ if command -v pyenv >/dev/null 2>&1; then
         command pyenv "$@"
     }
 fi
+
+if [ -e /home/bennet/.nix-profile/etc/profile.d/nix.sh ]; then . /home/bennet/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
