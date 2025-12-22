@@ -37,8 +37,10 @@ return {
 					"__pycache__",
 					"%.lock",
 					"%.DS_Store",
+
 					"venv*",
 					".venv*",
+					".v_*",
 				},
 				path_display = { "smart" },
 				mappings = {

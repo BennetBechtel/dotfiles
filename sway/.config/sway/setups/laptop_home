@@ -1,11 +1,9 @@
 # Map monitor descriptions to Sway output names
-set $middle "BNQ BenQ GW2485TC ETM5N02296SL0"
-set $right  "BNQ BenQ GW2485TC ETM5N02460SL0"
+set $middle "Microstep MPG 274U E16M CF0H215700095"
 
 # Output configuration
 output eDP-1 disable
-output $middle position 1080 435
-output $right transform 90 position 0 0
+output $middle position 0,0 scale 1.4
 
 # Workspaces (1–10)
 workspace 1 output $middle

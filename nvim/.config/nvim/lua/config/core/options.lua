@@ -14,6 +14,7 @@ vim.opt.showmode = false
 vim.opt.showtabline = 2
 vim.opt.termguicolors = true
 vim.opt.background = "dark"
+vim.o.showtabline = 0 -- This completely disables the status line.
 
 -- Indentation
 vim.opt.tabstop = 2

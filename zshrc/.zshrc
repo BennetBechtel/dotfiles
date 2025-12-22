@@ -4,6 +4,12 @@
 [[ $- != *i* ]] && return
 
 # -----------------------------
+# Defaults
+# -----------------------------
+export EDITOR=nvim
+export VISUAL="$EDITOR"
+
+# -----------------------------
 # Keybinds
 # -----------------------------
 bindkey -e                        # Emacs-style keybindings
@@ -15,6 +21,7 @@ bindkey '^H' backward-kill-word   # Ctrl + backspace
 # PATH
 # -----------------------------
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # -----------------------------
 # Aliases
@@ -61,13 +68,13 @@ eval "$(zoxide init zsh)"
 
 # Autosuggestions (async for speed)
 ZSH_AUTOSUGGEST_USE_ASYNC=1
-if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+    source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
 # Syntax highlighting (must be last)
-if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 # -----------------------------

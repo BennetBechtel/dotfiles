@@ -5,7 +5,7 @@
   "gtk-layer-shell": true,
   "modules-left": ["sway/workspaces"],
   "modules-center": ["sway/window"],
-  "modules-right": ["custom/updates", "network", "pulseaudio", "battery", "clock"],
+  "modules-right": ["network", "pulseaudio", "battery", "clock"],
   "sway/window": {
     "format": "{app_id}"
   },

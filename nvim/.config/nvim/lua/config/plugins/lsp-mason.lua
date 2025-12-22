@@ -273,6 +273,12 @@ return {
 
 				"clangd",
 
+				"marksman",
+				"mdformat",
+				"prettier",
+
+				"jsonls",
+
 				"html",
 				"cssls",
 				"ts_ls",

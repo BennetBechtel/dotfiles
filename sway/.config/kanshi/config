@@ -1,17 +1,3 @@
-profile desktop_home {
-    output "BNQ BenQ GW2485TC ETM5N02296SL0" enable position 0,0
-    output "BNQ BenQ GW2485TC ETM5N02451SL0" enable position -1080,-435 transform 90
-
-    exec ln -sf ~/.config/sway/setups/home ~/.config/sway/current_setup && swaymsg reload
-}
-
-profile desktop_single_monitor {
-    output "BNQ BenQ GW2485TC ETM5N02296SL0" enable position 0,0
-    exec ln -sf ~/.config/sway/setups/single_monitor ~/.config/sway/current_setup && swaymsg reload
-}
-
-
-
 profile laptop_mobile {
     output eDP-1 enable position 0,0
 
@@ -20,15 +6,7 @@ profile laptop_mobile {
 
 profile laptop_home {
     output eDP-1 disable
-    output "BNQ BenQ GW2485TC ETM5N02296SL0" enable position 0,0
-    output "BNQ BenQ GW2485TC ETM5N02460SL0" enable position 1080,-435 transform 90
+    output "Microstep MPG 274U E16M CF0H215700095" enable
 
-    exec ln -sf ~/.config/sway/setups/home ~/.config/sway/current_setup && swaymsg reload
-}
-
-profile laptop_single_monitor {
-    output eDP-1 disable
-    output "BNQ BenQ GW2485TC ETM5N02296SL0" enable position 0,0
-
-    exec ln -sf ~/.config/sway/setups/single_monitor ~/.config/sway/current_setup && swaymsg reload
+    exec ln -sf ~/.config/sway/setups/laptop_home ~/.config/sway/current_setup && swaymsg reload
 }

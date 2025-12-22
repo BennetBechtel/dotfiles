@@ -93,5 +93,13 @@ else
   notify-send "Starship: Config not found"
 fi
 
+# tmux
+if [ ! -f ~/.config/tmux/themes/$theme_id.conf ]; 
+then
+  notify-send "Tmux: Config not found"
+else 
+  ln -sf ~/.config/tmux/themes/$theme_id.conf ~/.config/tmux/current_theme.conf
+fi
+
 # Send theme name as confirmation
 notify-send "Theme: ${selected}"
