@@ -39,8 +39,8 @@ return {
 					"%.DS_Store",
 
 					"venv*",
-					".venv*",
-					".v_*",
+					"%.venv*",
+					"%.v_*",
 				},
 				path_display = { "smart" },
 				mappings = {
@@ -49,6 +49,11 @@ return {
 						["<C-j>"] = actions.move_selection_next, -- move test to next result
 						["<C-q>"] = actions.send_selected_to_qflist + custom_actions.open_trouble_qflist,
 					},
+				},
+			},
+			pickers = {
+				find_files = {
+					find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
 				},
 			},
 			-- config for telescope themes

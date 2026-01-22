@@ -20,6 +20,7 @@ return {
 					"json",
 					"javascript",
 					"typescript",
+					"svelte",
 					"tsx",
 					"yaml",
 					"html",

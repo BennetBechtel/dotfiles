@@ -24,7 +24,18 @@ return {
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
 
 			-- Useful status updates for LSP.
-			{ "j-hui/fidget.nvim", opts = {} },
+			{
+				"j-hui/fidget.nvim",
+				opts = {
+					notification = {
+						override_vim_notify = true,
+						window = {
+							winblend = 0,
+							normal_hl = "Normal",
+						},
+					},
+				},
+			},
 
 			-- Allows extra capabilities provided by blink.cmp
 			"saghen/blink.cmp",
@@ -246,6 +257,17 @@ return {
 						},
 					},
 				},
+
+				emmet_ls = {
+					filetypes = {
+						"html",
+						"css",
+						"scss",
+						"javascriptreact",
+						"typescriptreact",
+						"svelte",
+					},
+				},
 			}
 
 			-- Ensure the servers and tools above are installed
@@ -284,6 +306,8 @@ return {
 				"ts_ls",
 				"emmet_ls",
 				"tailwindcss",
+
+				"svelte-language-server",
 
 				"eslint",
 				"eslint_d",

@@ -15,6 +15,7 @@ return {
 				yaml = { "prettier" },
 				lua = { "stylua" },
 				python = { "isort", "black" },
+				svelte = { "prettier" },
 			},
 			format_on_save = {
 				lsp_fallback = true,

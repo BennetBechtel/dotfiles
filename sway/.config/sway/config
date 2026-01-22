@@ -12,7 +12,7 @@ set $mod Mod4
 set $term kitty
 set $menu rofi -show drun
 set $fileManager thunar
-set $browser firefox
+set $browser chromium-browser
 set $emailClient thunderbird
 
 set $screenshot_dir ~/.Screenshots
@@ -39,7 +39,7 @@ default_floating_border pixel 2
 exec setsid waybar & disown
 
 # Hide and Move Cursor
-seat * hide_cursor when-typing enable
+seat * hide_cursor when-typing disable
 seat * hide_cursor 10000
 mouse_warping container
 focus_follows_mouse yes
@@ -53,6 +53,10 @@ input type:touchpad {
     tap enabled
     natural_scroll enabled
     middle_emulation enabled
+}
+
+input type:pointer {
+    pointer_accel -0.75
 }
 
 input type:keyboard {
@@ -75,6 +79,9 @@ exec /usr/bin/gnome-keyring-daemon --start --components=secrets
 exec --no-startup-id nm-applet --indicator >/dev/null 2>&1
 #exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec lxpolkit
+
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+# xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-wlr
 
 
 ##############################################
@@ -196,6 +203,8 @@ bindsym --locked XF86MonBrightnessUp   exec brightnessctl -q set 10%+
 # Brightness Control for desk setup
 bindsym $mod+XF86AudioLowerVolume exec ~/.config/sway/scripts/brightness-down.sh
 bindsym $mod+XF86AudioRaiseVolume exec ~/.config/sway/scripts/brightness-up.sh
+# Mute on keyboard
+bindsym $mod+comma exec pamixer -t
 
 # Screenshot
 bindsym $mod+Delete exec ~/.config/sway/scripts/screenshot.sh $screenshot_dir

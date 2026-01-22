@@ -28,6 +28,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # -----------------------------
 alias cls="reset"
 alias vi="nvim"
+alias ssh="kitten ssh"
 alias yz="yazi"
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
