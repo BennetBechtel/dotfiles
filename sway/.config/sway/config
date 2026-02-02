@@ -12,10 +12,10 @@ set $mod Mod4
 set $term kitty
 set $menu rofi -show drun
 set $fileManager thunar
-set $browser chromium-browser
+set $browser firefox
 set $emailClient thunderbird
 
-set $screenshot_dir ~/.Screenshots
+set $screenshot_dir ~/Screenshots
 
 # Home row direction keys
 set $left h
@@ -44,6 +44,8 @@ seat * hide_cursor 10000
 mouse_warping container
 focus_follows_mouse yes
 
+seat * xcursor_theme Adwaita 24
+
 
 ##############################################
 #  4. Input
@@ -71,7 +73,7 @@ bindsym $mod+Ctrl+t input * xkb_switch_layout next
 ##############################################
 exec_always swaync
 exec kanshi
-exec_always sh -c '~/.local/bin/autotiling -l 2'
+exec_always sh -c 'autotiling -l 2'
 exec_always swaybg -m fill -i "$(cat ~/.config/current_wallpaper)"
 
 # Autoconnect Wifi
@@ -94,12 +96,12 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
 # Audio inhibits idle (Spotify, YouTube, mpv, etc.)
 exec_always wayland-pipewire-idle-inhibit
 
-exec_always sh -c 'pkill -x swayidle; swayidle -w \
+exec_always sh -c 'pkill swayidle; swayidle -w \
   timeout 300 "brightnessctl -s set 10% || true" \
     resume "brightnessctl -r || true" \
   timeout 330 "playerctl pause; swaylock -f -C ~/.config/swaylock/config" \
     before-sleep "playerctl pause; pactl set-sink-mute @DEFAULT_SINK@ true; swaylock -f -C ~/.config/swaylock/config" \
-    after-resume "pactl set-sink-mute @DEFAULT_SINK@ false; pkill -x waybar; sleep 1; setsid waybar & disown" \
+    after-resume "pactl set-sink-mute @DEFAULT_SINK@ false; pkill waybar; sleep 1; setsid waybar & disown" \
   timeout 600 "systemctl suspend"'
 
 
@@ -153,6 +155,7 @@ bindsym $mod+q        kill
 bindsym $mod+Ctrl+m   exit
 bindsym $mod+Ctrl+l   exec swaylock
 bindsym $mod+Ctrl+p exec systemctl suspend
+bindsym $mod+Ctrl+h exec systemctl hibernate
 bindsym $mod+Ctrl+u exec shutdown now
 
 # Layout: split / float / fullscreen

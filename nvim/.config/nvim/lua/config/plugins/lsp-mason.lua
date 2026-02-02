@@ -295,6 +295,9 @@ return {
 
 				"clangd",
 
+				"nil_ls",
+				"nixfmt",
+
 				"marksman",
 				"mdformat",
 				"prettier",

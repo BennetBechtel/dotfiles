@@ -25,7 +25,18 @@ return {
 		-- C-k: Toggle signature help (if signature.enabled = true)
 		--
 		-- See :h blink-cmp-config-keymap for defining your own keymap
-		keymap = { preset = "super-tab" },
+		keymap = {
+			preset = "super-tab",
+			-- Add custom keybindings
+			["<C-j>"] = { "select_next", "fallback" },
+			["<C-k>"] = { "select_prev", "fallback" },
+			["<CR>"] = { "accept", "fallback" },
+			["<C-CR>"] = { "accept", "fallback" },
+
+			-- New bindings to replace C-space and signature help
+			["<C-n>"] = { "show_documentation", "hide_documentation" }, -- Docs (replaces C-space secondary function)
+			["<C-o>"] = { "show", "hide" }, -- Toggle menu (replaces C-space)
+		},
 
 		appearance = {
 			-- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'

@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # Read themes file into array
 readarray -t themes < ~/.dotfiles/themes/themes.txt
 declare -A theme_map=()
@@ -46,7 +47,7 @@ if [ ! -f ~/.config/kitty/themes/$theme_id.conf ];
 then
   notify-send "Kitty: Config not found"
 else 
-  ln -sf ~/.config/kitty/themes/$theme_id.conf ~/.config/kitty/current_theme.conf
+  ln -sf ~/.config/kitty/themes/$theme_id.conf ~/.config/kitty/current-theme.conf
   kitty +kitten themes --reload-in=all $theme_id
 fi
 
@@ -60,7 +61,7 @@ fi
 
 # waybar
 ln -sf ~/.config/waybar/themes/$theme_id.css ~/.config/waybar/current_theme.css
-killall waybar
+pkill waybar
 waybar &
 
 # swaylock

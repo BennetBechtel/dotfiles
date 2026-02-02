@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Rofi wallpaper selector for Sway with fast preview
 # Requires: rofi, imagemagick

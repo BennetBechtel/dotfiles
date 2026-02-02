@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Screenshot directory from argument or default
 SCREENSHOT_DIR="${1:-$HOME/.Screenshots}"

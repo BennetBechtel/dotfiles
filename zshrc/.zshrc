@@ -28,10 +28,16 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # -----------------------------
 alias cls="reset"
 alias vi="nvim"
+alias cd="z"
+alias cdi="zi"
 alias ssh="kitten ssh"
 alias yz="yazi"
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+
+alias update="sudo nixos-rebuild switch"
+alias edit="sudo -E nvim /etc/nixos/configuration.nix"
+alias s="nix-search"
 
 alias nmtui-dark='(
   export TERM=xterm-256color
@@ -68,15 +74,15 @@ setopt SHARE_HISTORY
 eval "$(zoxide init zsh)"
 
 # Autosuggestions (async for speed)
-ZSH_AUTOSUGGEST_USE_ASYNC=1
-if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-    source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
-
-# Syntax highlighting (must be last)
-if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
+#ZSH_AUTOSUGGEST_USE_ASYNC=1
+#if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+#    source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+#fi
+#
+## Syntax highlighting (must be last)
+#if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+#    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#fi
 
 # -----------------------------
 # Prompt
@@ -103,4 +109,3 @@ if command -v pyenv >/dev/null 2>&1; then
     }
 fi
 
-if [ -e /home/bennet/.nix-profile/etc/profile.d/nix.sh ]; then . /home/bennet/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
