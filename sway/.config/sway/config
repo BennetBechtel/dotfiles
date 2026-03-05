@@ -76,6 +76,8 @@ exec kanshi
 exec_always sh -c 'autotiling -l 2'
 exec_always swaybg -m fill -i "$(cat ~/.config/current_wallpaper)"
 
+exec_always ~/.config/sway/scripts/start-protonvpn.sh &
+
 # Autoconnect Wifi
 exec /usr/bin/gnome-keyring-daemon --start --components=secrets
 exec --no-startup-id nm-applet --indicator >/dev/null 2>&1

@@ -1,0 +1,10 @@
+[Unit]
+Description=Run Rclone Dropbox Bisync every 5 minutes
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=15min
+Persistent = true;
+
+[Install]
+WantedBy=timers.target

@@ -3,9 +3,18 @@
   "layer": "top",
   "exclusive": true,
   "gtk-layer-shell": true,
-  "modules-left": ["sway/workspaces"],
-  "modules-center": ["sway/window"],
-  "modules-right": ["network", "pulseaudio", "battery", "clock"],
+  "modules-left": [
+    "sway/workspaces"
+  ],
+  "modules-center": [
+    "sway/window"
+  ],
+  "modules-right": [
+    "network",
+    "pulseaudio",
+    "battery",
+    "clock"
+  ],
   "sway/window": {
     "format": "{app_id}"
   },
@@ -26,24 +35,36 @@
     "format-plugged": " {capacity}%",
     "format-alt": "{icon} {time}",
     "format-full": " {capacity}%",
-    "format-icons": [" ", " ", " ", " ", " "],
+    "format-icons": [
+      " ",
+      " ",
+      " ",
+      " ",
+      " "
+    ],
     "tooltip-format": "{time}"
   },
   "network": {
     "format-wifi": "  {essid}",
     "format-ethernet": "  Connected",
-    "format-linked": "{ifname} (No IP) ",
+    // This replaces the "ipv6leakintrf0 (No IP)" text with a VPN icon and label
+    "format-linked": "󰖂  VPN Active",
     "format-disconnected": "  Disconnected",
+    "tooltip-format": "{ifname} via {gwaddr}",
     "tooltip-format-wifi": "Signal Strength: {signalStrength}%",
     "on-click": "nm-connection-editor"
   },
   "pulseaudio": {
-      "format": "{icon} {volume}%",
-      "format-muted": " ",
-      "format-icons": {
-          "default": ["", " ", " "]
-      },
-      "on-click": "pavucontrol"
+    "format": "{icon} {volume}%",
+    "format-muted": " ",
+    "format-icons": {
+      "default": [
+        "",
+        " ",
+        " "
+      ]
+    },
+    "on-click": "pavucontrol"
   },
   "custom/updates": {
     "tooltip": false,

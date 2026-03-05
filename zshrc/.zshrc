@@ -8,6 +8,7 @@
 # -----------------------------
 export EDITOR=nvim
 export VISUAL="$EDITOR"
+export TERM=kitty
 
 # -----------------------------
 # Keybinds
@@ -22,6 +23,8 @@ bindkey '^H' backward-kill-word   # Ctrl + backspace
 # -----------------------------
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+
+export CHROME_EXECUTABLE="/run/current-system/sw/bin/chromium"
 
 # -----------------------------
 # Aliases
@@ -38,6 +41,8 @@ alias grep='grep --color=auto'
 alias update="sudo nixos-rebuild switch"
 alias edit="sudo -E nvim /etc/nixos/configuration.nix"
 alias s="nix-search"
+
+#alias scrcpy='SDL_VIDEODRIVER=x11 SDL_RENDER_DRIVER=opengl scrcpy'
 
 alias nmtui-dark='(
   export TERM=xterm-256color

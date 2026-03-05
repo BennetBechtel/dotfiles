@@ -3,7 +3,7 @@ set $middle "Microstep MPG 274U E16M CF0H215700095"
 
 # Output configuration
 output eDP-1 disable
-output $middle position 0,0 scale 1.4
+output $middle position 0,0 scale 1.5
 
 # Workspaces (1–10)
 workspace 1 output $middle
