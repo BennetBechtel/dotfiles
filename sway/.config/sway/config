@@ -11,7 +11,7 @@ include current_setup
 set $mod Mod4
 set $term kitty
 set $menu rofi -show drun
-set $fileManager thunar
+set $fileManager nautilus
 set $browser firefox
 set $emailClient thunderbird
 
@@ -46,6 +46,11 @@ focus_follows_mouse yes
 
 seat * xcursor_theme Adwaita 24
 
+# Make the SSH/Keyring password prompts float
+for_window [title="Unlock Private Key"] floating enable
+for_window [title="Enter password to unlock your login keyring"] floating enable
+for_window [app_id="lxpolkit"] floating enable
+
 
 ##############################################
 #  4. Input
@@ -76,16 +81,14 @@ exec kanshi
 exec_always sh -c 'autotiling -l 2'
 exec_always swaybg -m fill -i "$(cat ~/.config/current_wallpaper)"
 
-exec_always ~/.config/sway/scripts/start-protonvpn.sh &
+exec ~/.config/sway/scripts/start-protonvpn.sh &
 
-# Autoconnect Wifi
-exec /usr/bin/gnome-keyring-daemon --start --components=secrets
-exec --no-startup-id nm-applet --indicator >/dev/null 2>&1
-#exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec lxpolkit
+# Autoconnect Wifi & SSH-Agent
+exec --no-startup-id gnome-keyring-daemon --start --components=secrets,ssh,pkcs11
+exec --no-startup-id nm-applet --indicator
+exec --no-startup-id lxpolkit
 
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
-# xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-wlr
 
 
 ##############################################

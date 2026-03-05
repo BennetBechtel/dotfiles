@@ -100,6 +100,7 @@ then
   notify-send "Tmux: Config not found"
 else 
   ln -sf ~/.config/tmux/themes/$theme_id.conf ~/.config/tmux/current_theme.conf
+  tmux source-file ~/.config/tmux/tmux.conf
 fi
 
 # Send theme name as confirmation

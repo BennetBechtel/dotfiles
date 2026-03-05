@@ -3,4 +3,4 @@ Description=Rclone Dropbox Bisync
 
 [Service]
 Type=oneshot
-ExecStart=/run/current-system/sw/bin/rclone bisync dropbox: %h/Dropbox --resilient --recover --verbose
+ExecStart=/usr/bin/rclone bisync dropbox: /home/bennet/Dropbox --resilient --recover --verbose

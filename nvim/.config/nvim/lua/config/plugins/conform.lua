@@ -16,7 +16,7 @@ return {
 				lua = { "stylua" },
 				python = { "isort", "black" },
 				svelte = { "prettier" },
-				nix = { "nixfmt" },
+				-- nix = { "nixfmt" },
 			},
 			format_on_save = {
 				lsp_fallback = true,

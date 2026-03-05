@@ -8,7 +8,7 @@
 # -----------------------------
 export EDITOR=nvim
 export VISUAL="$EDITOR"
-export TERM=kitty
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/keyring/ssh"
 
 # -----------------------------
 # Keybinds
@@ -31,16 +31,13 @@ export CHROME_EXECUTABLE="/run/current-system/sw/bin/chromium"
 # -----------------------------
 alias cls="reset"
 alias vi="nvim"
+alias zen-browser="flatpak run app.zen_browser.zen"
 alias cd="z"
 alias cdi="zi"
 alias ssh="kitten ssh"
 alias yz="yazi"
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-
-alias update="sudo nixos-rebuild switch"
-alias edit="sudo -E nvim /etc/nixos/configuration.nix"
-alias s="nix-search"
 
 #alias scrcpy='SDL_VIDEODRIVER=x11 SDL_RENDER_DRIVER=opengl scrcpy'
 
@@ -79,15 +76,15 @@ setopt SHARE_HISTORY
 eval "$(zoxide init zsh)"
 
 # Autosuggestions (async for speed)
-#ZSH_AUTOSUGGEST_USE_ASYNC=1
-#if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-#    source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-#fi
-#
-## Syntax highlighting (must be last)
-#if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-#    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-#fi
+ZSH_AUTOSUGGEST_USE_ASYNC=1
+if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+    source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
+# Syntax highlighting (must be last)
+if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 
 # -----------------------------
 # Prompt
