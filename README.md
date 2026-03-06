@@ -38,6 +38,12 @@ sudo apt install -y fastfetch
 
 ### Desktop Environment (Sway)
 
+#### User Groups
+
+```bash
+sudo usermod -a -G video ${USER}
+```
+
 #### Window Manager & Utilities
 
 ```bash
