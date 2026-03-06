@@ -31,7 +31,6 @@ export CHROME_EXECUTABLE="/run/current-system/sw/bin/chromium"
 # -----------------------------
 alias cls="reset"
 alias vi="nvim"
-alias zen-browser="flatpak run app.zen_browser.zen"
 alias cd="z"
 alias cdi="zi"
 alias ssh="kitten ssh"

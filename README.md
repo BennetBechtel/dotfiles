@@ -98,9 +98,8 @@ stow backgrounds fastfetch kitty nvim rofi starship sway systemd tmux zshrc
 #### Fonts & Assets
 
 ```bash
-# Manual move to local share
-mkdir -p ~/.local/share/fonts/FiraCode
-mkdir -p ~/.local/share/fonts/SF-Pro
+cd ~/.dotfiles
+stow fonts
 fc-cache -fv
 ```
 
@@ -148,6 +147,7 @@ rclone bisync ~/Dropbox dropbox: --resync --verbose
 
 ```bash
 # Enable systemd timer for sync
+systemctl --user daemon-reload
 systemctl --user start rclone-dropbox.timer
 systemctl --user enable rclone-dropbox.timer
 ```

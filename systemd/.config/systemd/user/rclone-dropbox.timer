@@ -2,9 +2,12 @@
 Description=Run Rclone Dropbox Bisync every 5 minutes
 
 [Timer]
-OnBootSec=2min
-OnUnitActiveSec=15min
-Persistent = true
+# Trigger 1 minute after the timer unit is started/loaded
+OnActiveSec=1min
+# Trigger every 5 minutes (at :00, :05, :10, etc.)
+OnCalendar=*:0/5
+# Ensure it runs if the machine was suspended or off during a scheduled slot
+Persistent=true
 
 [Install]
 WantedBy=timers.target
