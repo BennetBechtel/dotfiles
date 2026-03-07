@@ -1,3 +1,0 @@
-# Ignore the directories systemd uses to manage enabled units
-.*\.wants/
-.*\.requires/

@@ -99,15 +99,15 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
 #for_window [app_id=".*"]  inhibit_idle fullscreen
 
 # Audio inhibits idle (Spotify, YouTube, mpv, etc.)
-exec_always wayland-pipewire-idle-inhibit
+exec_always ~/.cargo/bin/wayland-pipewire-idle-inhibit
 
-exec_always sh -c 'pkill swayidle; swayidle -w \
+exec swayidle -w \
   timeout 300 "brightnessctl -s set 10% || true" \
     resume "brightnessctl -r || true" \
   timeout 330 "playerctl pause; swaylock -f -C ~/.config/swaylock/config" \
     before-sleep "playerctl pause; pactl set-sink-mute @DEFAULT_SINK@ true; swaylock -f -C ~/.config/swaylock/config" \
     after-resume "pactl set-sink-mute @DEFAULT_SINK@ false; pkill waybar; sleep 1; setsid waybar & disown" \
-  timeout 600 "systemctl suspend"'
+  timeout 600 "systemctl suspend"
 
 
 ##############################################

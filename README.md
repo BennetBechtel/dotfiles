@@ -49,6 +49,8 @@ sudo usermod -a -G video ${USER}
 ```bash
 sudo apt install -y sway kanshi autotiling swaybg sway-notification-center slurp grim wl-clipboard swayidle swaylock playerctl pamixer brightnessctl ddcutil
 sudo apt install -y gnome-keyring libpam-gnome-keyring seahorse lxpolkit
+
+sudo apt install libpipewire-0.3-dev libwayland-dev
 cargo install wayland-pipewire-idle-inhibit
 ```
 
@@ -98,7 +100,7 @@ sudo apt install -y nodejs npm python3 python3-pip python3-venv luarocks lua5.1 
 sudo apt install -y stow
 git clone https://github.com/bennetbechtel/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-stow backgrounds fastfetch kitty nvim rofi starship sway systemd tmux zshrc
+stow backgrounds fastfetch kitty nvim rofi starship sway tmux zshrc
 ```
 
 #### Fonts & Assets
@@ -152,8 +154,12 @@ rclone bisync ~/Dropbox dropbox: --resync --verbose
 ```
 
 ```bash
+# Copy rclone-dropbox.servie and rclone-dropbox.timer to /etc/systemd/system
+sudo cp ~/.dotfiles/systemd/rclone-dropbox.service /etc/systemd/system/
+sudo cp ~/.dotfiles/systemd/rclone-dropbox.timer /etc/systemd/system/
+
 # Enable systemd timer for sync
-systemctl --user daemon-reload
-systemctl --user start rclone-dropbox.timer
-systemctl --user enable rclone-dropbox.timer
+sudo systemctl daemon-reload
+sudo systemctl start rclone-dropbox.timer
+sudo systemctl enable rclone-dropbox.timer
 ```

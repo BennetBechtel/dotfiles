@@ -1,0 +1,13 @@
+[Unit]
+Description=Run Rclone Dropbox Bisync every 5 minutes
+
+[Timer]
+# This ensures it triggers at 12:00, 12:05, 12:10, etc.
+OnCalendar=*:0/5:00
+# This ensures it runs if the computer was off during a tick
+Persistent=true
+# This gives the system a moment to settle after login before the first run
+OnStartupSec=1min
+
+[Install]
+WantedBy=timers.target
